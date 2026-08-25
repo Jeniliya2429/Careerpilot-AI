@@ -54,26 +54,19 @@ Return STRICT JSON with this shape:
 Return ONLY the JSON, no preamble, no markdown fences."""
 
 
-TAILOR_RESUME_PROMPT = """You are an expert resume writer. Rewrite the
-candidate's resume to better align with the target job.
+TAILOR_RESUME_PROMPT = """You are an executive resume writer and ATS optimization specialist.
+Rewrite the candidate's resume to maximally align with the target job while adhering to the highest executive standards.
 
-STRICT GUARDRAIL — you must NEVER invent, add, or imply any of the
-following unless it is already explicitly present in the original resume:
-- employers / companies
-- job titles
-- education or degrees
-- certifications
-- years of experience
-- technologies or tools
-- skills
-- projects
-- achievements or metrics
-- responsibilities
+STRICT TRUTHFULNESS GUARDRAIL:
+You must NEVER invent, fabricate, or add any of the following unless explicitly present in the original resume:
+- Employers / companies
+- Job titles or roles
+- Education, universities, or degrees
+- Certifications or licenses
+- Fake metrics or unearned achievements
+- Unmentioned technologies or tools
 
-You may ONLY rephrase, reorder, and emphasize content that is already
-truthfully present in the original resume. If a job requirement is not
-supported by the original resume, DO NOT add it to the tailored resume —
-it should remain a gap, not be papered over.
+You may ONLY rephrase, polish, reorder, and highlight existing experience to match target role keywords and impact standards.
 
 Original resume:
 ---
@@ -81,13 +74,32 @@ Original resume:
 ---
 
 Target job requirements: {jd_requirements}
-Missing keywords (for your awareness only — do NOT insert these unless
-they are genuinely already implied by existing resume content): {missing_keywords}
+Missing keywords (for awareness only — do NOT insert unless already truthfully supported): {missing_keywords}
 
-Output format: plain text, using "## Section Name" for section headings
-(e.g. "## Summary", "## Experience", "## Skills", "## Education").
-Do not invent companies, titles, dates, or metrics that weren't in the
-original resume."""
+STRUCTURE & TEMPLATE REQUIREMENTS:
+1. Header:
+   - Line 1: '# Candidate Full Name' (extract accurately from the original resume).
+   - Line 2: Contact info line: 'email@example.com | Phone | Location | LinkedIn | Portfolio' (extracted truthfully from the original resume).
+2. '## Professional Summary'
+   - 2-3 compelling, keyword-rich sentences highlighting candidate's core background, key strengths, and target alignment.
+3. '## Core Competencies & Technical Skills'
+   - Group into clear categorized bullet points:
+     - • **Languages & Frameworks:** ...
+     - • **Tools, Cloud & Infrastructure:** ...
+     - • **Domain Expertise & Methodologies:** ...
+4. '## Professional Experience'
+   - For each role:
+     '### Job Title | Company Name | Location | Dates'
+     - Strong action verb bullets (e.g. • **Spearheaded / Architected / Developed / Optimized...**)
+     - State the action, technologies used, and measurable business results truthfully.
+5. '## Key Projects' (if present in original resume)
+   - '### Project Title | Technologies Used'
+   - • Problem solved, technical architecture, and impact.
+6. '## Education & Certifications'
+   - • **Degree Name** in Major — University Name, Graduation Year
+   - • **Certifications:** [Certification Name] — Issuing Org, Year (if present)
+
+Output clean markdown with '# Name', contact line, and '## Section' headings. Do not output markdown code fences (```)."""
 
 
 SELF_REFLECTION_PROMPT = """You are a strict fact-checking reviewer. Compare
