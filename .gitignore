@@ -1,0 +1,39 @@
+# Environments & Secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Python
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+*.db
+*.sqlite
+*.sqlite3
+test_careerpilot.db
+
+# Vector DB & Storage
+chroma_db/
+
+# Node / Frontend
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
