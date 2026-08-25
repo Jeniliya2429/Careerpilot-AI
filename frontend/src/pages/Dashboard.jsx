@@ -161,9 +161,11 @@ export default function Dashboard() {
                   minWidth: 0,
                   boxSizing: 'border-box'
                 }}>
-                  <input type="radio" name="resume" checked={selectedResume === r.id} onChange={() => setSelectedResume(r.id)} style={{ flexShrink: 0 }} />
-                  <span style={{ flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.filename}</span>
-                  {selectedResume === r.id && <span style={{ color: 'var(--accent-cyan)', fontSize: 11, flexShrink: 0 }}>Selected</span>}
+                  <input type="radio" name="resume" checked={selectedResume === r.id} onChange={() => setSelectedResume(r.id)} style={{ width: 16, height: 16, flexShrink: 0 }} />
+                  <span style={{ flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    📄 {r.filename || 'Resume Document'}
+                  </span>
+                  {selectedResume === r.id && <span style={{ color: 'var(--accent-cyan)', fontSize: 11, flexShrink: 0, fontWeight: 600 }}>Selected</span>}
                 </label>
               ))
             )}
@@ -229,10 +231,11 @@ export default function Dashboard() {
                   minWidth: 0,
                   boxSizing: 'border-box'
                 }}>
-                  <input type="radio" name="jd" checked={selectedJd === j.id} onChange={() => setSelectedJd(j.id)} style={{ flexShrink: 0 }} />
+                  <input type="radio" name="jd" checked={selectedJd === j.id} onChange={() => setSelectedJd(j.id)} style={{ width: 16, height: 16, flexShrink: 0 }} />
                   <span style={{ flex: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                    <strong>{j.role_title || 'Untitled Role'}</strong> {j.company_name && `— ${j.company_name}`}
+                    💼 <strong>{j.role_title || (j.company_name ? j.company_name + ' Position' : (j.raw_text ? j.raw_text.slice(0, 30) + '...' : 'Saved Job Description'))}</strong> {j.company_name && j.role_title ? `— ${j.company_name}` : ''}
                   </span>
+                  {selectedJd === j.id && <span style={{ color: 'var(--accent-cyan)', fontSize: 11, flexShrink: 0, fontWeight: 600 }}>Selected</span>}
                 </label>
               ))
             )}

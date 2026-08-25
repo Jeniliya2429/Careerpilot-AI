@@ -56,7 +56,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visib
   outline-offset: 2px;
 }
 
-input, textarea {
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]), textarea {
   font-family: var(--font-body);
   background: var(--bg-panel);
   border: 1px solid var(--line);
@@ -68,6 +68,17 @@ input, textarea {
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: 16px !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  accent-color: var(--accent-cyan);
+  cursor: pointer;
+  flex-shrink: 0 !important;
 }
 
 input::placeholder, textarea::placeholder { color: var(--text-muted); }
