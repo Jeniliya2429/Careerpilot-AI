@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div className="container" style={{ maxWidth: 420, paddingTop: 80 }}>
       <div className="eyebrow" style={{ marginBottom: 8 }}>WELCOME BACK</div>
-      <h1 style={{ fontSize: 30, marginBottom: 24 }}>Sign in to your flight deck</h1>
+      <h1 style={{ fontSize: 30, marginBottom: 24 }}>Sign in to your Career Pilot</h1>
 
       <form onSubmit={submit} className="panel" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         {error && <div className="error-box">{error}</div>}

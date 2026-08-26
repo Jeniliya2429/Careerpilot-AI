@@ -101,7 +101,7 @@ export default function Dashboard() {
               AUTONOMOUS CAREERPILOT AGENT
             </div>
             <h1 style={{ fontSize: 26, color: 'var(--text-primary)', marginBottom: 8, lineHeight: 1.3 }}>
-              AI Flight Control & Application Tailoring Studio
+              AI Interview Prep & Application Tailoring Studio
             </h1>
             <p style={{ fontSize: 13.5, color: 'var(--text-secondary)', maxWidth: 620, lineHeight: 1.6 }}>
               Upload your resume, paste a target job description, and watch our multi-agent system generate ATS gap analysis, truthful bullet tailoring, voice mock interview rubrics, and a 60-second teleprompter pitch.

@@ -17,7 +17,7 @@ export default function Landing() {
         pre-interview battlecard — with a human checkpoint before anything ships.
       </p>
       <Link to={user ? '/dashboard' : '/register'} className="btn btn-primary">
-        {user ? 'Go to dashboard' : 'Start your flight plan'} →
+        {user ? 'Go to dashboard' : 'Start your PrepPlan'} →
       </Link>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginTop: 72 }}>
