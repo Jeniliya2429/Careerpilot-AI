@@ -9,7 +9,7 @@ export default function Landing() {
     <div className="container" style={{ paddingTop: 100, paddingBottom: 60 }}>
       <div className="eyebrow" style={{ marginBottom: 16 }}>AI CO-PILOT FOR YOUR NEXT ROLE</div>
       <h1 style={{ fontSize: 48, lineHeight: 1.1, maxWidth: 640, marginBottom: 20 }}>
-        Preflight check for your <span style={{ color: 'var(--accent-cyan)' }}>next interview</span>.
+        Get Ready for your <span style={{ color: 'var(--accent-cyan)' }}>next interview</span>.
       </h1>
       <p style={{ fontSize: 17, maxWidth: 540, marginBottom: 32 }}>
         Upload your resume and a job description. A LangGraph agent pipeline
